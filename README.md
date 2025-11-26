@@ -39,16 +39,16 @@ Puzzle solutions for Advent of Code 2025
 ## Features
 
 To create a new notebook for the current day's puzzle, run this command:
-`uv run src/advent_of_code/aoc_notebook.py`
+```uv run src/advent_of_code/aoc_notebook.py```
 
 Otherwise, to create a template for any specific day, run a command like this:
-`uv run src/advent_of_code/aoc_notebook.py --year=<year> --day=<day>`
+```uv run src/advent_of_code/aoc_notebook.py --year=<year> --day=<day>```
 
 To create all the notebooks for the current year, run:
-`uv run ./scripts/make-all-nbs.sh`
+```uv run ./scripts/make-all-nbs.sh```
 
 For a previous (or future) year, try:
-`uv run ./scripts/make-all-nbs.sh --year=<year> --count=<number-of-days>`
+```uv run ./scripts/make-all-nbs.sh --year=<year> --count=<number-of-days>```
 
 ## Requirements
 
