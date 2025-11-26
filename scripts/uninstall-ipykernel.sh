@@ -1,3 +1,3 @@
 #!/usr/bin/env -S uv run bash
 
-jupyter kernelspec uninstall aoc_2025
+jupyter kernelspec uninstall advent_of_code

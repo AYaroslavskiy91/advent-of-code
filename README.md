@@ -1,4 +1,4 @@
-# aoc-2025
+# advent-of-code
 
 <!-- badges-begin -->
 
@@ -17,7 +17,7 @@
 [copier badge]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-purple.json
 [copier]: https://copier.readthedocs.io/en/stable/
 [github badge]: https://badgen.net/badge/icon/github?icon=github&label
-[github page]: https://github.com/ayaroslavskiy91/aoc-2025
+[github page]: https://github.com/ayaroslavskiy91/advent-of-code
 [mypy badge]: https://www.mypy-lang.org/static/mypy_badge.svg
 [mypy]: https://mypy-lang.org/
 [pre-commit badge]: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
@@ -39,10 +39,10 @@ Puzzle solutions for Advent of Code 2025
 ## Features
 
 To create a new notebook for the current day's puzzle, run this command:
-`uv run src/aoc_2025/aoc_notebook.py`
+`uv run src/advent_of_code/aoc_notebook.py`
 
 Otherwise, to create a template for any specific day, run a command like this:
-`uv run src/aoc_2025/aoc_notebook.py --year=<year> --day=<day>`
+`uv run src/advent_of_code/aoc_notebook.py --year=<year> --day=<day>`
 ## Requirements
 
 Follow the instructions below to save your token:
@@ -283,4 +283,4 @@ This project was generated from [ayaroslavskiy91]'s [uv-copier-template] templat
 
 <!-- github-only -->
 
-[contributor guide]: https://github.com/ayaroslavskiy91/aoc-2025/blob/main/CONTRIBUTING.md
+[contributor guide]: https://github.com/ayaroslavskiy91/advent-of-code/blob/main/CONTRIBUTING.md

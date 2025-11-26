@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "aoc_2025"
+name = "advent_of_code"
 version = "0.0.1"
 description = "Puzzle solutions for Advent of Code 2025"
 readme = "README.md"
@@ -19,10 +19,10 @@ dependencies = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/ayaroslavskiy91/aoc-2025#readme"
-Homepage = "https://github.com/ayaroslavskiy91/aoc-2025"
-Issues = "https://github.com/ayaroslavskiy91/aoc-2025/issues"
-Source = "https://github.com/ayaroslavskiy91/aoc-2025"
+Documentation = "https://github.com/ayaroslavskiy91/advent-of-code#readme"
+Homepage = "https://github.com/ayaroslavskiy91/advent-of-code"
+Issues = "https://github.com/ayaroslavskiy91/advent-of-code/issues"
+Source = "https://github.com/ayaroslavskiy91/advent-of-code"
 
 [project.scripts]
 
@@ -44,7 +44,7 @@ test = [
   "coverage[toml]",
   "pytest",
   "toml",
-  "aoc_2025",
+  "advent_of_code",
 ]
 
 typecheck = [
@@ -55,16 +55,16 @@ typecheck = [
   "pytest",
   "faker",
 
-  "aoc_2025",
+  "advent_of_code",
 ]
 
 [tool.coverage.paths]
 # https://coverage.readthedocs.io/en/stable/config.html#paths
-aoc_2025 = [
-  "src/aoc_2025",
-  "*/aoc-2025/src/aoc_2025",
+advent_of_code = [
+  "src/advent_of_code",
+  "*/advent-of-code/src/advent_of_code",
 ]
-tests = ["tests", "*/aoc-2025/tests"]
+tests = ["tests", "*/advent-of-code/tests"]
 
 [tool.coverage.report]
 # https://coverage.readthedocs.io/en/stable/config.html#report
@@ -74,15 +74,15 @@ exclude_lines = [
   "if TYPE_CHECKING:",
 ]
 fail_under = 80
-omit = ["src/aoc_2025/_typing.py"]
+omit = ["src/advent_of_code/_typing.py"]
 show_missing = true
 
 [tool.coverage.run]
 # https://coverage.readthedocs.io/en/stable/config.html#run
 branch = true
-omit = ["src/aoc_2025/__about__.py"]
+omit = ["src/advent_of_code/__about__.py"]
 parallel = true
-source_pkgs = ["aoc_2025", "tests"]
+source_pkgs = ["advent_of_code", "tests"]
 
 [tool.mypy]
 # https://mypy.readthedocs.io/en/stable/config_file.html#configuring-error-messages

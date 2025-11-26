@@ -1,5 +1,5 @@
 """
-aoc-2025
+advent-of-code
 
 Puzzle solutions for Advent of Code 2025
 """

@@ -6,13 +6,13 @@ Here is a list of important resources for contributors:
 - [Documentation]
 - [Issue Tracker]
 
-[documentation]: "https://github.com/ayaroslavskiy91/aoc-2025#readme"
-[issue tracker]: https://github.com/ayaroslavskiy91/aoc-2025/issues
-[source code]: https://github.com/ayaroslavskiy91/aoc-2025
+[documentation]: "https://github.com/ayaroslavskiy91/advent-of-code#readme"
+[issue tracker]: https://github.com/ayaroslavskiy91/advent-of-code/issues
+[source code]: https://github.com/ayaroslavskiy91/advent-of-code
 
 ## How to submit changes
 
-[Open a pull request](https://github.com/ayaroslavskiy91/aoc-2025/pulls) to submit changes to this project.
+[Open a pull request](https://github.com/ayaroslavskiy91/advent-of-code/pulls) to submit changes to this project.
 
 Your pull request needs to meet the following guidelines for acceptance:
 
