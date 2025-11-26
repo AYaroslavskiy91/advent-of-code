@@ -1,0 +1,19 @@
+# _DO NOT EDIT MANUALLY_
+_commit: 2025.4.1
+_src_path: git@github.com:ayaroslavskiy91/uv-copier-template.git
+author_email: ayaroslavskiy91@users.noreply.github.com
+author_fullname: Alex Yaroslavskiy
+copyright_holder: Alex Yaroslavskiy
+copyright_holder_email: ayaroslavskiy91@users.noreply.github.com
+initial_commit: true
+maximum_line_length: 88
+maximum_python_version: '3.13'
+minimum_python_version: '3.12'
+project_description: Puzzle solutions for Advent of Code 2025
+project_name: aoc-2025
+python_package_distribution_name: aoc_2025
+python_package_import_name: aoc_2025
+repository_name: aoc-2025
+repository_namespace: ayaroslavskiy91
+repository_provider: github.com
+setup_pre_commit: false

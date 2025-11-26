@@ -1,0 +1,304 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "aoc_2025"
+version = "0.0.1"
+description = "Puzzle solutions for Advent of Code 2025"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+authors = [
+  { name = "Alex Yaroslavskiy", email = "ayaroslavskiy91@users.noreply.github.com" },
+]
+dependencies = [
+    "advent-of-code-data[nb]>=2.1.0",
+    "nbformat>=5.10.4",
+    "numpy>=2.3.5",
+    "pandas>=2.3.3",
+]
+
+[project.urls]
+Documentation = "https://github.com/ayaroslavskiy91/aoc-2025#readme"
+Homepage = "https://github.com/ayaroslavskiy91/aoc-2025"
+Issues = "https://github.com/ayaroslavskiy91/aoc-2025/issues"
+Source = "https://github.com/ayaroslavskiy91/aoc-2025"
+
+[project.scripts]
+
+
+[tool.uv]
+default-groups = "all"
+
+[dependency-groups]
+lint = [
+  "pre-commit~=4.0",
+]
+
+dev = [
+  "ipykernel",
+  "jupyter-core",
+]
+
+test = [
+  "coverage[toml]",
+  "pytest",
+  "toml",
+  "aoc_2025",
+]
+
+typecheck = [
+  # Type Checkers
+  "mypy~=1.13",
+  "basedpyright~=1.21",
+  # Tests
+  "pytest",
+  "faker",
+
+  "aoc_2025",
+]
+
+[tool.coverage.paths]
+# https://coverage.readthedocs.io/en/stable/config.html#paths
+aoc_2025 = [
+  "src/aoc_2025",
+  "*/aoc-2025/src/aoc_2025",
+]
+tests = ["tests", "*/aoc-2025/tests"]
+
+[tool.coverage.report]
+# https://coverage.readthedocs.io/en/stable/config.html#report
+exclude_lines = [
+  "pragma: no cover",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
+fail_under = 80
+omit = ["src/aoc_2025/_typing.py"]
+show_missing = true
+
+[tool.coverage.run]
+# https://coverage.readthedocs.io/en/stable/config.html#run
+branch = true
+omit = ["src/aoc_2025/__about__.py"]
+parallel = true
+source_pkgs = ["aoc_2025", "tests"]
+
+[tool.mypy]
+# https://mypy.readthedocs.io/en/stable/config_file.html#configuring-error-messages
+pretty = true
+show_column_numbers = true
+show_error_context = true
+# https://mypy.readthedocs.io/en/stable/config_file.html#configuring-warnings
+warn_unreachable = true
+# https://mypy.readthedocs.io/en/stable/config_file.html#import-discovery
+exclude = []
+mypy_path = "$MYPY_CONFIG_FILE_DIR/typings"
+# https://mypy.readthedocs.io/en/stable/config_file.html#miscellaneous-strictness-flags
+strict = false
+
+[tool.basedpyright]
+# https://docs.basedpyright.com/#/configuration
+include = ["src/uv_copier_template", "tests", "typings"]
+pythonPlatform = "All"
+pythonVersion = "3.11"
+reportIgnoreCommentWithoutRule = true
+reportUnnecessaryTypeIgnoreComment = "warning"
+typeCheckingMode = "basic"
+
+[tool.pytest.ini_options]
+addopts = "-s --strict-markers"
+markers = ["slow: marks tests as slow (deselect with '-m \"not slow\"')"]
+
+[tool.ruff]
+# https://docs.astral.sh/ruff/settings/
+extend-exclude = [".*", "*.ipynb"]
+force-exclude = true
+line-length = 88
+src = ["src"]
+target-version = "py312"
+
+[tool.ruff.format]
+# https://docs.astral.sh/ruff/settings/#format
+docstring-code-format = true
+line-ending = "lf"
+
+[tool.ruff.lint]
+# https://docs.astral.sh/ruff/settings/#lint
+unfixable = ["ERA"]
+select = [
+  # https://docs.astral.sh/ruff/rules/
+  # Default Rule Set
+  "E", # pycodestyle Error
+  "F", # Pyflakes
+  # Additional Rules
+  "W",    # pycodestyle Warning
+  "ERA",  # eradicate
+  "YTT",  # flake8-2020
+  "S",    # flake8-bandit
+  "BLE",  # flake8-blind-except
+  "FBT",  # flake8-boolean-trap
+  "B",    # flake8-bugbear
+  "A",    # flake8-builtins
+  "C4",   # flake8-comprehensions
+  "DTZ",  # flake8-datetimez
+  "T10",  # flake8-debugger
+  "EM",   # flake8-errmsg
+  "ISC",  # flake8-implicit-str-concat
+  "ICN",  # flake8-import-conventions
+  "LOG",  # flake8-logging
+  "G",    # flake8-logging-format
+  "INP",  # flake8-no-pep420
+  "PIE",  # flake8-pie
+  "T20",  # flake8-print
+  "PYI",  # flake8-pyi
+  "PT",   # flake8-pytest-style
+  "Q",    # flake8-quotes
+  "RET",  # flake8-return
+  "SLOT", # flake8-slots
+  "SIM",  # flake8-simplify
+  "TID",  # flake8-tidy-imports
+  "TC",   # flake8-type-checking
+  "PTH",  # flake8-use-pathlib
+  "ARG",  # flake8-unused-arguments
+  "FLY",  # flynt
+  "I",    # isort
+  "C90",  # mccabe (Complexity)
+  "N",    # pep8-naming
+  "PERF", # Perflint
+  "D",    # pydocstyle
+  "PGH",  # pygrep-hooks
+  "PLC",  # Pylint Convention
+  "PLE",  # Pylint Error
+  "PLR",  # Pylint Refactor
+  "PLW",  # Pylint Warning
+  "UP",   # pyupgrade
+  "FURB", # refurb
+  "RUF",  # Ruff-specific rules
+
+  # Overrides
+  # https://docs.astral.sh/ruff/rules/multi-line-summary-second-line/
+  "D213",
+]
+ignore = [
+  # Rules that conflict with the Ruff Formatter
+  # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+  "W191",
+  "E111",
+  "E114",
+  "E117",
+  "E501",
+  "D206",
+  "D300",
+  "Q000",
+  "Q001",
+  "Q002",
+  "Q003",
+  "ISC001",
+  "ISC002",
+
+  # Print statements aren't really that bad.
+  "T201",
+
+  # E203 (pycodestyle Error): Whitespace before ‘,’, ‘;’, or ‘:’
+  # https://docs.astral.sh/ruff/rules/whitespace-before-punctuation/
+  # Black adds a space before & after ':' in slice notation
+  "E203",
+
+  # B019 (flake8-bugbear): Use of functools.lru_cache or functools.cache on methods
+  #                        can lead to memory leaks
+  # https://docs.astral.sh/ruff/rules/cached-instance-method/
+  # Has known false positives
+  "B019",
+
+  # D200 (pydocstyle): One-line docstring should fit on one line
+  # https://docs.astral.sh/ruff/rules/fits-on-one-line/
+  # This is often ugly. Numpy's doc style does not have an explicit rule about this
+  #     convention; therefore pydocstyle defers to PEP 257's recommendation.
+  "D200",
+
+  # SIM108 (flake8-simplify): Use ternary operator {contents} instead of if-else-block
+  # https://docs.astral.sh/ruff/rules/if-else-block-instead-of-if-exp/
+  # Suggests long ternary expressions
+  "SIM108",
+
+  # Pylint Refactor PLR09/"Too many" Rules
+  # https://docs.astral.sh/ruff/rules/#pylint-pl
+  # Without agreed upon team guidelines, these are too opinionated to employ
+  "PLR09",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# F401 (Pyflakes): {name} imported but unused
+# https://docs.astral.sh/ruff/rules/unused-import/
+# Init imports are for manipulating namespace
+"*/__init__.py" = ["F401"]
+"*/__init__.pyi" = ["F401"]
+
+# D100 (pydocstyle): Missing docstring in public module
+# https://docs.astral.sh/ruff/rules/undocumented-public-module/
+# The purpose of `__about__.py` is a commonly known convention
+"*/__about__.py" = ["D100"]
+
+# D* (pydocstyle)
+# https://docs.astral.sh/ruff/rules/#pydocstyle-d
+# Good tests should not need docstrings. Tests aren't rendered for documentation.
+# FBT001 (flake8-boolean-trap): Boolean-typed positional argument in function definition
+# https://docs.astral.sh/ruff/rules/boolean-type-hint-positional-argument/
+# Accommodates parameterization of tests of functions that return a boolean
+# PLR2004 (Pylint Refactor): Magic value used in comparison, consider replacing {value}
+#                            with a constant variable
+# https://docs.astral.sh/ruff/rules/magic-value-comparison/
+# Comparisions to magic values are not a problem in unit tests
+# S101 (bandit): assert used
+# https://docs.astral.sh/ruff/rules/assert/
+# assert is ubiquitous in pytest tests
+"tests/*.py" = ["D", "FBT001", "PLR2004", "S101"]
+
+# A002 (flake8-builtins): Argument {name} is shadowing a Python builtin
+# https://docs.astral.sh/ruff/rules/builtin-argument-shadowing/
+# FBT* (flake8-boolean-trap)
+# https://docs.astral.sh/ruff/rules/#flake8-boolean-trap-fbt
+# N8* (pep8-naming)
+# https://docs.astral.sh/ruff/rules/#pep8-naming-n
+# PYI042 (flake8-pyi)
+# https://docs.astral.sh/ruff/rules/snake-case-type-alias/
+# Not ours to fix in type stubs for third party modules
+# D* (pydocstyle)
+# https://docs.astral.sh/ruff/rules/#pydocstyle-d
+# Conflicts with PYI021
+"typings/*.pyi" = ["A002", "D", "FBT", "N8", "PYI042"]
+
+# D* (pydocstyle)
+# https://docs.astral.sh/ruff/rules/#pydocstyle-d
+# Docstrings unnecessary for in-project files
+# N999 (pep8-naming): Invalid module name
+# https://docs.astral.sh/ruff/rules/invalid-module-name/
+# Module name will be formatted during template rendering
+"project/*" = ["D", "N999"]
+
+[tool.ruff.lint.flake8-tidy-imports]
+# https://docs.astral.sh/ruff/settings/#lint_flake8-tidy-imports_ban-relative-imports
+ban-relative-imports = "parents"
+
+[tool.ruff.lint.flake8-unused-arguments]
+# https://docs.astral.sh/ruff/settings/#lint_flake8-unused-arguments
+ignore-variadic-names = true
+
+[tool.ruff.lint.isort]
+# https://docs.astral.sh/ruff/settings/#lint_isort_extra-standard-library
+extra-standard-library = ["_typeshed"]
+# https://docs.astral.sh/ruff/settings/#lint_isort_known-first-party
+known-first-party = ["tests"]
+# https://docs.astral.sh/ruff/settings/#lint_isort_section-order
+section-order = [
+  "future",
+  "standard-library",
+  "third-party",
+  "first-party",
+  "local-folder",
+]
+
+[tool.ruff.lint.pydocstyle]
+# https://docs.astral.sh/ruff/settings/#lint_pydocstyle
+convention = "numpy"
