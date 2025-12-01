@@ -1,0 +1,21 @@
+# _DO NOT EDIT MANUALLY_
+_commit: 2025.11.1
+_src_path: git@github.com:ayaroslavskiy91/uv-copier-template.git
+advent_of_code: true
+author_email: ayaroslavskiy91@users.noreply.github.com
+author_fullname: Alex Yaroslavskiy
+copyright_holder: Alex Yaroslavskiy
+copyright_holder_email: ayaroslavskiy91@users.noreply.github.com
+initial_commit: true
+maximum_line_length: 88
+maximum_python_version: '3.13'
+minimum_python_version: '3.12'
+project_description: Repository for all future advent of code submissions, starting
+    from 2025
+project_name: advent-of-code
+python_package_distribution_name: advent-of-code
+python_package_import_name: advent_of_code
+repository_name: advent-of-code
+repository_namespace: ayaroslavskiy91
+repository_provider: github.com
+setup_pre_commit: false
